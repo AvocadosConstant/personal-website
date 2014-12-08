@@ -33,6 +33,15 @@ body {
   font-family: lato;
 }
 
+.tim-footer{
+  	width:100%;
+	height:80px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	margin-top: 20px;
+}
+
 .social-icon{
 	height: 80px;
 	margin: 0 10px;
@@ -46,6 +55,7 @@ body {
   min-height: 100%;
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+   position: relative;
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -114,6 +124,7 @@ body {
 
 .cover {
   padding: 0 20px;
+  padding-bottom:80px;
 }
 .cover .btn-lg {
   padding: 10px 20px;
