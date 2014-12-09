@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <!-- Welcome to my website. It's just a work in progress atm so check back in the future for more fun stuff.-->
-      <meta charset="utf-8">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="styles/main.css">
-      
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <link rel="icon" href="../../favicon.ico">
+    <head>
+        <!-- Welcome to my website. It's just a work in progress atm so check back in the future for more fun stuff.-->
+        <meta charset="utf-8">
+        <!--<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
 
-      <title>Tim Hung</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="images/favicon.ico">
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <title>Tim Hung</title>
+        <!-- Bootstrap core CSS -->
+        <link href="styles/bootstrap.min.css" rel="stylesheet">
 
-      <!-- Bootstrap core CSS -->
-      <link href="styles/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="styles/main.css" rel="stylesheet">
 
-      <!-- Custom styles for this template -->
-      <link href="styles/main.css" rel="stylesheet">
+    </head>
 
-  </head>
+    <body>
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="masthead clearfix">
+                        <div class="inner">
+                        <h3 class="masthead-brand"></h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                   
 
-  <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand"></h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                </ul>
-              </nav>
+                <div class="inner cover">
+                    <h1 class="cover-heading">Tim Hung</h1>
+
+                    <p class="lead">
+                      Computer science student at Binghamton University.<br>
+                      Website launched on 11/20/2014.
+                    </p>
+
+                    <a href="http://www.linkedin.com/in/timhung1" title="LinkedIn">
+                        <img class="social-icon" src="images/LinkedIn.svg">
+                    </a>
+                    <a href="http://www.github.com/AvocadosConstant" title="GitHub">
+                        <img class="social-icon" src="images/GitHub.svg">
+                    </a>
+                    <a href="/blog" title="Blog">
+                        <img class="social-icon" src="images/WordPress.svg">
+                    </a>
+
+                    <!--<p class="lead"><a href="https://drive.google.com/file/d/0B1E3njW1DeC7NTBVUVdsQnYxTFE/view?usp=sharing">Resume</a></p>-->
+
+                    <p class="lead">
+                        <a href="mailto:thung1@binghamton.edu" class="btn btn-lg btn-default" title="Contact Me" style="margin-top:20px;">Contact Me</a>
+                    </p>
+                </div>
             </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Tim Hung</h1>
-
-            <p class="lead">
-              Computer science student at Binghamton University.<br>
-              Website launched on 11/20/2014.
-            </p>
-
-            <a href="http://www.linkedin.com/in/timhung1" title="LinkedIn">
-              <img class="social-icon" src="images/LinkedIn.svg">
-            </a>
-            <a href="http://www.github.com/AvocadosConstant" title="GitHub">
-              <img class="social-icon" src="images/GitHub.svg">
-            </a>
-            <a href="/blog" title="Blog">
-              <img class="social-icon" src="images/WordPress.svg">
-            </a>
-
-            <!--<p class="lead"><a href="https://drive.google.com/file/d/0B1E3njW1DeC7NTBVUVdsQnYxTFE/view?usp=sharing">Resume</a></p>-->
-
-            <p class="lead">
-              <a href="mailto:thung1@binghamton.edu" class="btn btn-lg btn-default" title="Contact Me" style="margin-top:20px;">Contact Me</a>
-            </p>
-          </div>
         </div>
-      </div>
-      <div class="inner tim-footer">
+        <div class="inner tim-footer">
           © 2014
-      </div>
+        </div>
     </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>   
-  </body>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script>
+
+            $( '.social-icon' ).on({
+                "mouseenter": function(){
+                    $( this ).addClass("social-icon-hover");
+                },
+                "mouseleave": function(){
+                    $( this ).removeClass("social-icon-hover");
+                }
+            });
+
+        </script>
+        
+    </body>
 <html>

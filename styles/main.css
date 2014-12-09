@@ -18,10 +18,18 @@ a:hover {
   background-color: #4c4c4c;
 }
 
+/*
+ * Animations
+ */
+ @-webkit-keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 
 /*
  * Base structure
  */
+
 
 html,
 body {
@@ -45,6 +53,11 @@ body {
 .social-icon{
 	height: 80px;
 	margin: 0 10px;
+	-webkit-animation: fadein 1s;
+}
+
+.social-icon-hover{
+	opacity: .4;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
