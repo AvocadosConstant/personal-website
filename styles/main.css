@@ -11,26 +11,22 @@ a:hover {
 
 /* Custom default button */
 .btn-default,
-.btn-default:hover,
 .btn-default:focus {
-  color: #fff;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #4c4c4c;
+    color: #fff;
+    text-shadow: none; /* Prevent inheritence from `body` */
+    background-color: #4c4c4c;
+    -webkit-transition: opacity .2s;
 }
-
-/*
- * Animations
- */
- @-webkit-keyframes fadein {
-    from {opacity: 0;}
-    to {opacity: 1;}
+.btn-default:hover {
+    color: #fff;
+    text-shadow: none; /* Prevent inheritence from `body` */
+    background-color: #4c4c4c;
+    opacity: .7;
 }
 
 /*
  * Base structure
  */
-
-
 html,
 body {
   height: 100%;
@@ -53,11 +49,15 @@ body {
 .social-icon{
 	height: 80px;
 	margin: 0 10px;
-	-webkit-animation: fadein 1s;
+	/*-webkit-animation: fadein 1s;*/
+    
+    /*  Opacity transitions take .2 seconds.    */
+    -webkit-transition: opacity .2s;
 }
 
-.social-icon-hover{
-	opacity: .4;
+/*  On hover for social icons.  */
+.social-icon:hover {
+  opacity: .7;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
