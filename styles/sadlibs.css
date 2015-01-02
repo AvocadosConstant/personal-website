@@ -1,0 +1,31 @@
+body{
+    text-align:center;
+    font-family:'Fjalla One';
+    font-size:20px;
+    background: #e6eaf0;
+}
+button{
+    margin: 20px;
+    font-family:'Fjalla One';
+    font-size:20px;	    
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+input{
+    font-size: 24px;
+}
+.fill{
+    background: white;
+    color:red;
+    border-bottom:2px black solid;
+    font-family:'Shadows Into Light';
+    padding: 0 6px;
+    margin: 4px;
+}
+.prompt{
+    line-height: 40px;
+    width:75%;
+    margin:0 auto;
+}
