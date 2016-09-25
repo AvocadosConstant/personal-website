@@ -39,19 +39,19 @@ body {
     min-height: 100%;
     /*background-color: #4c4c4c;
     color: #f4f7f2;*/
-    background-color: #f4f7f2;
+    /*background-color: #f4f7f2;*/
     color: #4c4c4c;
     padding: 10% !important;
-    background-image: url(../images/new_year_background.png);
+    /*background-image: url(../images/new_year_background.png);*/
 }
 
 .content-section {
     min-height: 100%;
     color: #f4f7f2;
-    background-color: #4c4c4c;
+    /*background-color: #4c4c4c;*/
     padding-top:5% !important;
-    background-image: url(../images/footer_lodyas.png);
-    background-image: url(../images/congruent_outline.png);
+    /*background-image: url(../images/footer_lodyas.png);*/
+    /*background-image: url(../images/congruent_outline.png);*/
 }
 
 
@@ -110,7 +110,7 @@ body {
 .portfolio-entry-title {
 }
 
-.social-icon{
+.social-icon {
 	height: 80px;
 	margin: 0 10px;
 	/*-webkit-animation: fadein 1s;*/
@@ -123,3 +123,35 @@ body {
 .social-icon:hover {
   opacity: .7;
 }
+
+
+
+/*  Canvas  */
+
+#bgCanvas {
+  /*width: 100vw;*/
+  /*height: 100vh;*/
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
