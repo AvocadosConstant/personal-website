@@ -32,7 +32,9 @@ body {
   height: 100%;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.2);
-  font-family: lato;
+  /*font-family: lato;*/
+  font-family: 'Julius Sans One', sans-serif;
+
 }
 
 .info-section {
@@ -137,21 +139,3 @@ body {
   left: 0;
   z-index: -9999;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
