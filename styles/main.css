@@ -37,23 +37,20 @@ body {
 
 }
 
+h5 {
+  font-family: 'Lato', sans-serif;
+}
+
 .info-section {
     min-height: 100%;
-    /*background-color: #4c4c4c;
-    color: #f4f7f2;*/
-    /*background-color: #f4f7f2;*/
     color: #4c4c4c;
     padding: 10% !important;
-    /*background-image: url(../images/new_year_background.png);*/
 }
 
 .content-section {
     min-height: 100%;
     color: #f4f7f2;
-    /*background-color: #4c4c4c;*/
     padding-top:5% !important;
-    /*background-image: url(../images/footer_lodyas.png);*/
-    /*background-image: url(../images/congruent_outline.png);*/
 }
 
 
