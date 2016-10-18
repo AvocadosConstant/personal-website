@@ -1,4 +1,4 @@
-# timhung.codes
+# [timhung.codes](http://timhung.codes/)
 My personal website.
 
 ## Planned Content
