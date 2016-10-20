@@ -1,5 +1,5 @@
 function generateTriangles() {
-  console.log("Generating triangles");
+  //console.log("Generating triangles");
   var triangles = Delaunay.triangulate(vertices);
 
   for(var i = triangles.length; i; ) {
@@ -33,26 +33,30 @@ function randRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function genTriColors(colors, min, max) {
+  for(var i = 0; i < colors.length; i++) {
+    colors[i] = randRange(min, max);
+  }
+}
+
 var CANVAS = {
   id: "bgCanvas",
   width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0), 
   height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
   border: 10,
-  color: "#FFF"
+  color: "#FFF",
+  vertices: 120
 };
 
+// initialize canvas
 var canvas = document.getElementById(CANVAS.id);
 var ctx = canvas.getContext("2d");
-
-// initialize canvas
 ctx.canvas.width  = CANVAS.width;
 ctx.canvas.height = CANVAS.height;
 ctx.fillStyle = CANVAS.color;
 ctx.fillRect(0, 0, CANVAS.width, CANVAS.height);
-ctx.lineWidth=1;
-ctx.strokeStyle="#dfdfdf";
 
-var vertices = new Array(120);
+var vertices = new Array(CANVAS.vertices);
 for(var i = 0; i < vertices.length; i++) {
   var x = 1.4 * Math.random() * canvas.width - 0.2 * canvas.width;
   var y = 1.4 * Math.random() * canvas.height - 0.2 * canvas.height;
@@ -60,8 +64,9 @@ for(var i = 0; i < vertices.length; i++) {
 }
 
 var triColors = new Array(Delaunay.triangulate(vertices).length);
-for(var i = 0; i < triColors.length; i++) {
-  triColors[i] = randRange(240, 250);
-}
+genTriColors(triColors, 240, 250);
 
-var timer = setInterval(jiggleVertices, 100);
+generateTriangles();
+//generateTriangles();
+//generateTriangles();
+//var timer = setInterval(jiggleVertices, 100);
