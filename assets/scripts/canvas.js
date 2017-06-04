@@ -1,7 +1,9 @@
-function generateTriangles() {
+function generateTriangles(vertices) {
   //console.log("Generating triangles");
-  var triangles = Delaunay.triangulate(vertices);
+  return Delaunay.triangulate(vertices);
+}
 
+function drawTriangles(triangles) {
   for(var i = triangles.length; i; ) {
     ctx.beginPath();
     var colVal = triColors[i];
@@ -19,14 +21,14 @@ function generateTriangles() {
   }
 }
 
-function jiggleVertices() {
+function jiggleVertices(vertices, mag=2) {
   console.log("Commence jiggling");
   for(var i = 0; i < vertices.length; i++) {
-    var x = vertices[i][0] + randRange(-5, 5);
-    var y = vertices[i][1] + randRange(-5, 5);
-    //vertices[i] = [x, y];
+    var x = vertices[i][0] + randRange(-mag, mag);
+    var y = vertices[i][1] + randRange(-mag, mag);
+    vertices[i] = [x, y];
   }
-  generateTriangles();
+  drawTriangles(triangles);
 }
 
 function randRange(min, max) {
@@ -66,7 +68,6 @@ for(var i = 0; i < vertices.length; i++) {
 var triColors = new Array(Delaunay.triangulate(vertices).length);
 genTriColors(triColors, 240, 250);
 
-generateTriangles();
-//generateTriangles();
-//generateTriangles();
-//var timer = setInterval(jiggleVertices, 100);
+triangles = generateTriangles(vertices);
+drawTriangles(triangles);
+var timer = setInterval(function(){jiggleVertices(vertices);}, 100);
