@@ -22,10 +22,11 @@ function generateTriangles() {
 function jiggleVertices() {
   console.log("Commence jiggling");
   for(var i = 0; i < vertices.length; i++) {
-    var x = vertices[i][0] + randRange(-5, 5);
-    var y = vertices[i][1] + randRange(-5, 5);
-    //vertices[i] = [x, y];
+    var x = vertices[i][0] + randRange(-1, 1);
+    var y = vertices[i][1] + randRange(-1, 1);
+    vertices[i] = [x, y];
   }
+
   generateTriangles();
 }
 
@@ -39,13 +40,13 @@ function genTriColors(colors, min, max) {
   }
 }
 
+var SPACING = 200;
 var CANVAS = {
   id: "bgCanvas",
-  width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0), 
-  height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+  width: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) + 2 * SPACING, 
+  height: Math.max(document.documentElement.clientHeight, window.innerHeight || 0) + 2 * SPACING,
   border: 10,
   color: "#FFF",
-  vertices: 120
 };
 
 // initialize canvas
@@ -56,17 +57,35 @@ ctx.canvas.height = CANVAS.height;
 ctx.fillStyle = CANVAS.color;
 ctx.fillRect(0, 0, CANVAS.width, CANVAS.height);
 
-var vertices = new Array(CANVAS.vertices);
-for(var i = 0; i < vertices.length; i++) {
-  var x = 1.4 * Math.random() * canvas.width - 0.2 * canvas.width;
-  var y = 1.4 * Math.random() * canvas.height - 0.2 * canvas.height;
-  vertices[i] = [x, y];
+var vertices = [];// = new Array(CANVAS.vertices);
+for(var j = -SPACING; j < CANVAS.height; j+=SPACING) {
+  for(var i = -SPACING; i < CANVAS.width; i+=SPACING) {
+    var x = i + (0.4 * SPACING) + 0.2 * (SPACING * Math.random());
+    var y = j + (0.4 * SPACING) + 0.2 * (SPACING * Math.random());
+    vertices.push([x, y]);
+    console.log("Quadrant at (" + i + ", "+ j + ") | Point generated at (" + x + ", "+ y + ")");
+  }
 }
 
+console.log(vertices);
+
 var triColors = new Array(Delaunay.triangulate(vertices).length);
-genTriColors(triColors, 240, 250);
+genTriColors(triColors, 20, 250);
 
 generateTriangles();
-//generateTriangles();
-//generateTriangles();
-//var timer = setInterval(jiggleVertices, 100);
+var timer = setInterval(jiggleVertices, 100);
+
+ctx.strokeStyle="#00FF00";
+for(var i = -SPACING; i < CANVAS.width; i+=SPACING) {
+  ctx.beginPath();
+  ctx.moveTo(i, -SPACING);
+  ctx.lineTo(i, CANVAS.height);
+  ctx.stroke();
+}
+ctx.strokeStyle="#0000FF";
+for(var j = -SPACING; j < CANVAS.height; j+=SPACING) {
+  ctx.beginPath();
+  ctx.moveTo(-SPACING, j);
+  ctx.lineTo(CANVAS.width, j);
+  ctx.stroke();
+}
