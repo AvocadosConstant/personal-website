@@ -13,6 +13,10 @@ h1 {
   font-family: 'Julius Sans One', sans-serif;
 }
 
+h5 {
+  font-size: 1.4rem;
+}
+
 .info-section {
     height: 99%;
     color: #4c4c4c;
